@@ -54,6 +54,7 @@ print(mean_math)
 print(mean_english)
 print(mean_chinese)
 #3.用補考後資料找出與國文成績相關係數最高的學科？
+#英文
 print(np.corrcoef(chinese_score,math_score))
 print(np.corrcoef(chinese_score,english_score))
 print(np.correlate(chinese_score,math_score))
