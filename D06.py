@@ -1,1 +1,15 @@
-import numpy as np 
+import numpy as np
+#1. 將下兩列 array 存成 npz 檔 array1 = np.array(range(30))array2 = np.array([2,3,5])
+array1 = np.array(range(30))
+array2 = np.array([2,3,5])
+np.savez("my_array.npz",x=array1,y=array2)
+#2.讀取剛剛的 npz 檔，加入下列 array 一起存成新的 npz 檔
+a = np.load("my_array.npz")
+print(a["x"])
+print(a["y"])
+array3 = np.array([[4,5,6],[1,2,3]])
+np.savez("new_array",x = a["x"],y=a["y"],z=array3)
+b = np.load("new_array.npz")
+print(b["x"])
+print(b["y"])
+print(b["z"])
